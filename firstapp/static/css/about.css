@@ -1,0 +1,20 @@
+*, *:before, *:after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  height: 80%;
+}
+
+body:before, body:after {
+  content: "";
+  display: block;
+  height: 50%;
+  background: #bbbebf;
+}
+
+body:after {
+  background: #050e2d;
+}

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+  <link rel="stylesheet" href="{% static "css/index.css" %}"><title>Редактирование постов</title>
+</head>
+<body>
+<center>
+     <div class="card" style="width: 23rem;">
+  <div class="card-body">
+<font size="6"><span class="card-title"  >Редактирование и удаление постов</span></font>
+<form method="POST" class="form-horizontal">
+        {% csrf_token %}
+        <p>
+            <label>Введите заголовок</label>
+            <textarea type="text" name="title" rows="2" cols="40"> {{posts.title}} </textarea>
+        </p>
+        <p>
+            <label>Введите текст</label>
+            <textarea type="text" name="text" rows="5" cols="40"> {{posts.text}}</textarea>
+        </p>
+        <input type="submit" value="Сохранить" >
+        <input type="reset" value="Отмена" >
+</form>
+  </div>
+     </div>
+</center>
+</body>
+</html>

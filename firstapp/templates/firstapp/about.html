@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+{% load static %}
+<head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootswatch/4.5.2/sketchy/bootstrap.min.css" integrity="sha384-RxqHG2ilm4r6aFRpGmBbGTjsqwfqHOKy1ArsMhHusnRO47jcGqpIQqlQK/kmGy9R" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static "css/about.css" %}">
+    <title>About</title>
+</head>
+<body>
+    <center>
+        <div class="card">
+    <p class="card-title">About</p>
+        <img src="{% static "image/about.jpg" %}" alt="Фотография" class="responsive", width="350">
+        <div class= "card-body">
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item">Борисов О.В</li>
+                <li class="list-group-item">Группа 09-853</li>
+                <li class="list-group-item">ovborisov322@gmail.com</li>
+            </ul>
+            <div id="app">
+                <button v-on:click="visible=!visible">Мои Интересы</button>
+                <div v-show="visible">
+                    <ul class="list-group list-group-flush">
+                    <li class="list-group-item">Сдавать все в последний момент</li>
+                    <li class="list-group-item">Волейбол</li>
+                    <li class="list-group-item">Горнолыжный спорт</li>
+                    </ul>
+                </div>
+                <p><a href="http://127.0.0.1:8000/">Главное меню</a></p
+            </div>
+            </div>
+        </div>
+    </center>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script type="module" src="{% static "js/about.js" %}"></script>
+    <script src="https://unpkg.com/vue"></script>
+</body>
+</html>

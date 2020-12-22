@@ -1,0 +1,5 @@
+Django~=2.2.4
+selenium~=3.141.0
+folium~=0.11.0
+pytest~=6.2.1
+behave~=1.2.6

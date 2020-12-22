@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+<head>
+      <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+  <link rel="stylesheet" href="{% static "css/index.css" %}"><title>Home</title>
+</head>
+<body>
+<center>
+    <div class="card">
+        <font size="7" class="card-title"><span>Отзывы</span></font>
+        <div class="card-header">
+            <ul class="nav nav-pills card-header-pills">
+                <li class="nav-item">
+                    <a class="nav-link disabled">Статьи</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="http://127.0.0.1:8000/map">Map</a>
+                </li>
+            </ul>
+        </div>
+        {% if text.count > 0 %}
+        <table class="table table-hover">
+            <thead>
+            <tr>
+                <th scope="col">Автор</th>
+                <th scope="col">Отзыв</th>
+            </tr>
+            </thead>
+            {% for post in text %}
+            <tbody>
+            <tr class="table-info">
+                <th scope="row"> {{post.author}}</th>
+                <td>{{post.text}}</td>
+                <td><a href={% url 'update' post.id %}>Изменить</a> | <a href="delete/{{post.id}}">Удалить</a></td>
+            </tr>
+            </tbody>
+            {% endfor %}
+        </table>
+        {% endif %}
+        {% for post in posts %}
+        {{ post.full_name|upper }} <br/>
+        {% endfor %}
+
+        <div class="pagination">
+            <span class="step-links">
+                {% if posts.has_previous %}
+                <a href="?page={{ posts.previous_page_number }}">Previous</a>
+                {% endif %}
+                <span class="current">
+                    Page {{ posts.number }} of {{ posts.paginator.num_pages }}.
+                </span>
+                {% if posts.has_next %}
+                <a href="?page={{ posts.next_page_number }}">Next</a>
+                {% endif %}
+            </span>
+        </div>
+                <div class="card-header">
+            <ul class="nav nav-pills card-header-pills">
+                <li class="nav-item">
+                    <a href="http://127.0.0.1:8000/list/create" class="nav-link active">Внести запись</a>
+                </li>
+            </ul>
+        </div>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    </div>
+</center>
+</body>
+
+</html>

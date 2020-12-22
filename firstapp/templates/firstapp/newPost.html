@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+  <link rel="stylesheet" href="{% static "css/index.css" %}"><title>Новый пост</title>
+</head>
+<body>
+<center>
+    <div class="card" style="width: 20rem;">
+        <font size="7"><span >Новая запись</span></font>
+        <form method="POST" class="form-horizontal">
+            {% csrf_token %}
+            {{  form.as_p }}
+            <button type="submit" class="card button">Внести</button>
+        </form>
+    </div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+</center>
+</body>
+</html>

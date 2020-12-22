@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en" >
+
+<head>
+  <meta charset="UTF-8">
+    <title>Главное меню</title>
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+  <link rel="stylesheet" href="{% static "css/mainmenu.css" %}">
+</head>
+<body>
+<center>
+    <div class="card" style="width: 18rem;">
+        <div class="card-body">
+            <font size="7"><span class="card-title" >Django Project</span></font> <br/>
+            <p><a href="http://127.0.0.1:8000/mainproject" class="btn" class="card-link" >Тест</a></p>
+            <p><a href="http://127.0.0.1:8000/list" class="btn" class="card-link" >Отзывы</a></p>
+            <p><a href="http://127.0.0.1:8000/list/client" class="btn" class="card-link">История</a></p>
+        </div>
+    </div>
+</center>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+</body>
+
+</html>
